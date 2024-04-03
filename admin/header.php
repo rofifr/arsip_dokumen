@@ -176,7 +176,7 @@
                                                   <?php }else{ ?>
                                                     <img src="../gambar/admin/<?php echo $profil['admin_foto'] ?>" style="width: 20px;height: 20px">
                                                 <?php } ?>
-                                                <span class="admin-name"><?php echo $_SESSION['nama']; ?> [ <b>Administrator</b> ]</span>
+                                                <span class="admin-name"><?php echo $_SESSION['nama']; ?> - <b class="m-2">Administrator</b> </span>
                                                 <i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
                                             </a>
                                             <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
