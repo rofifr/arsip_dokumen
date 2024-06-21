@@ -47,6 +47,10 @@
         background-color:  #27debf !important;
         color:  #0a574c !important;
     }
+
+    .header-menu {
+        font-weight: 600;
+    }
     .nav-link{
         font-family: manrope, sans-serif;
         font-size: 16px;
@@ -125,9 +129,9 @@
                                     <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
                                         <div class="header-top-menu tabl-d-n">
                                             <ul class="nav navbar-nav mai-top-nav">
-                                                <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
-                                                <li class="nav-item"><a href="arsip.php" class="nav-link">Semua Arsip</a></li>
-                                                <li class="nav-item dropdown res-dis-nn">
+                                                <li class="nav-item header-menu"><a href="index.php" class="nav-link">Home</a></li>
+                                                <li class="nav-item header-menu"><a href="arsip.php" class="nav-link">Semua Arsip</a></li>
+                                                <li class="nav-item header-menu dropdown res-dis-nn">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">Kategori <span class="angle-down-topmenu"><i class="fa fa-angle-down"></i></span></a>
                                                     <div role="menu" class="dropdown-menu animated zoomIn">
 
@@ -167,7 +171,7 @@
                                                         <?php 
                                                     } 
                                                     ?>
-                                                    <span class="admin-name"><?php echo $_SESSION['nama']; ?> [ <b>User</b> ]</span>
+                                                    <span class="admin-name"><?php echo $_SESSION['nama']; ?> - <b>User</b> </span>
                                                     <i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
                                                 </a>
                                                 <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
