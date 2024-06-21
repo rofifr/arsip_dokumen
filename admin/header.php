@@ -46,6 +46,11 @@
         background-color:  #27debf !important;
         color:  #0a574c !important;
     }
+
+    .header-text {
+        font-size: 1rem !important;
+        font-weight: 600;
+    }
     .nav-link{
         font-family: manrope, sans-serif;
         font-size: 16px;
@@ -142,7 +147,7 @@
                                     <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
                                         <div class="header-top-menu tabl-d-n">
                                             <ul class="nav navbar-nav mai-top-nav">
-                                                <li class="nav-item"><a href="#" class="nav-link">Sistem Informasi Arsip Digital</a></li>
+                                                <li class="nav-item"><a href="#" class="nav-link header-text">Sistem Informasi Arsip Digital</a></li>
                                             </ul>
                                         </div>
                                     </div>
