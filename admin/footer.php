@@ -4,7 +4,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="footer-copy-right">
-					<p>Copyright © <?php echo date('Y') ?>. Code Crafter</p>
+					<p style="color: #0a574c;">Copyright © <?php echo date('Y') ?>. Code Crafter</p>
 				</div>
 			</div>
 		</div>
