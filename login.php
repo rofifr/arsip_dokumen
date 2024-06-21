@@ -30,6 +30,27 @@
 </head>
 
 <body>
+    <style> 
+        body {
+            font-family: manrope, sans-serif;
+            background-image: url(gambar/user/full-bloom.webp);
+        }
+        
+        .user-login-form {
+            padding: 2rem 0 1rem 0;
+            background: #fff;
+            border-radius: 0.8rem;
+            box-shadow: -2px 8px 31px -24px rgba(0,0,0,0.59);
+            -webkit-box-shadow: -2px 8px 31px -24px rgba(0,0,0,0.59);
+            -moz-box-shadow: -2px 8px 31px -24px rgba(0,0,0,0.59);
+        }
+
+        .loginbtn, a{
+            background-color:  #27debf !important;
+            border-color: #27debf !important;
+            color:  #0a574c !important;
+        }
+        </style>
     <div class="error-pagewrap">
         <div class="error-page-int">
             <div class="text-center m-b-md custom-login">

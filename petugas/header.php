@@ -42,6 +42,25 @@
     ?>
 </head>
 <body>
+<style>
+    .header-top-area{
+        background-color:  #27debf !important;
+        color:  #0a574c !important;
+    }
+    .nav-link{
+        font-family: manrope, sans-serif;
+        font-size: 16px;
+        color: #0a574c !important;
+    }
+    .admin-name{
+        font-family: manrope, sans-serif;
+        color: #0a574c !important;
+    }
+    .footer-copyright-area{
+        background-color:  #27debf !important;
+        color:  #0a574c !important;
+    }
+</style>
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
