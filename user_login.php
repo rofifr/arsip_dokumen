@@ -8,7 +8,9 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/owl.carousel.css">
@@ -27,11 +29,33 @@
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <style>
+        body {
+            font-family: manrope, sans-serif;
+            background-image: url(gambar/user/full-bloom.webp);
+        }
+        
+        .user-login-form {
+            padding: 2rem 0 1rem 0;
+            background: #fff;
+            border-radius: 0.8rem;
+            box-shadow: -2px 8px 31px -24px rgba(0,0,0,0.59);
+            -webkit-box-shadow: -2px 8px 31px -24px rgba(0,0,0,0.59);
+            -moz-box-shadow: -2px 8px 31px -24px rgba(0,0,0,0.59);
+        }
+
+        .loginbtn, a{
+            background-color:  #27debf !important;
+            color:  #0a574c !important;
+        }
+        
+    </style>
 </head>
 
 <body>
     <div class="error-pagewrap">
-        <div class="error-page-int">
+        <div class="error-page-int user-login-form">
             <div class="text-center m-b-md custom-login">
                 <h3>SISTEM INFORMASI</h3>
                 <h4>ARSIP DIGITAL</h4>
@@ -74,7 +98,7 @@
                                 <input type="password" title="Please enter your password" placeholder="******" required="required" autocomplete="off" name="password" id="password" class="form-control">
                             </div>
 
-                            <input type="submit" class="btn btn-success btn-block loginbtn" value="Login">
+                            <input type="submit" class="btn btn-block loginbtn" value="Login">
                         </form>
 
                         <br>
@@ -86,7 +110,7 @@
                 <br>
             </div>
             <div class="text-center login-footer">
-                <p class="text-muted">Copyright © <?php echo date('Y') ?>. All rights reserved. Sistem Informasi Arsip Digital (SIAD)</p>
+                <p class="text-muted">Copyright © <?php echo date('Y') ?>. Code Crafter</p>
             </div>
         </div>   
     </div>

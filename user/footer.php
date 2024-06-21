@@ -7,7 +7,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="footer-copy-right">
-					<p>Copyright © <?php echo date('Y') ?>. Sistem Informasi Arsip Digital. All rights reserved.</p>
+					<p>Copyright © <?php echo date('Y') ?>. Code Crafter</p>
 				</div>
 			</div>
 		</div>

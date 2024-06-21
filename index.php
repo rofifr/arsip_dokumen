@@ -4,30 +4,40 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Dashboard V.2 | Kiaalap - Kiaalap Admin Template</title>
+        <title>Cintaraja Arsip</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     </head>
 
     <body>
 
-        <style type="text/css">
+        <style>
+            * {
+                font-family: manrope, sans-serif;
+            }
 
+            body {
+                overflow: hidden;
+            }
             .navbar-siad{
-                background: #006df0;
+                background: #fff;
                 border-radius: 0px;
-                border: 1px solid #006df0;
+                border: 1px solid #fff;
                 margin: 0px;
                 padding: 20px 0px;
             }
 
             .navbar-inverse .navbar-brand {
+                color: #0a574c;
+            }
 
-                color: #fff;
-
+            .navbar-inverse .navbar-brand:hover {
+                color: #0a574c;
             }
 
             .navbar-inverse .navbar-nav > li > a {
@@ -42,20 +52,28 @@
             }
 
             .banner{
-                background: #006df0;
+                background: #fff;
+                height: 90vh;
                 border-radius: 0px;
-                border: 1px solid #006df0;
                 padding: 60px 0px;
+                color: #0a574c;
             }
 
-            .banner{
-                color: white;
+            .banner h1 {
+                font-size: 5rem;
+                font-weight: 800;
             }
 
+            .banner h1 span {
+                font-size: 4.3rem;
+                font-weight: 300;
+            }
             .banner a{
                 padding: 15px 25px;
-                color: white;
-                border: 1px solid white;
+                font-weight: 600;
+                color: #0a574c;
+                background-color: #27debf;
+                border-radius: 0.5rem;
                 -webkit-transition: all 0.5s; 
                 transition: all 0.5s;
                 margin-right: 10px;
@@ -63,11 +81,28 @@
 
             .banner a:hover{
                 text-decoration: none;
-                border: 1px dashed white;
+                box-shadow: -2px 13px 31px -14px rgba(0,0,0,0.59);
+                -webkit-box-shadow: -2px 13px 31px -14px rgba(0,0,0,0.59);
+                -moz-box-shadow: -2px 13px 31px -14px rgba(0,0,0,0.59);
             }
 
             .banner p{
                 font-size: 13pt;
+            }
+
+            @media only screen and (max-width: 1200px) {
+            .banner .row {
+                text-align: center;
+                margin-top: 0px;
+            }
+
+            .banner h1 {
+                font-size: 3.8rem;
+            }
+
+            .illustration {
+                display: none;
+            }
             }
         </style>
 
@@ -77,17 +112,17 @@
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Arsip Digital</a>
+                    </button> -->
+                    <a class="navbar-brand" href="#">Cintaraja Arsip</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> -->
                     <!-- <ul class="nav navbar-nav">
                         <li><a href="#">Link <span class="sr-only">(current)</span></a></li>
                         <li><a href="#">Link</a></li>
@@ -106,18 +141,19 @@
                     </ul> -->
 
                 
-                </div>
+                <!-- </div> -->
             </div>
         </nav>
 
-
+        
         <div class="banner">
             <div class="container">
 
-                <div class="row">
+                <div class="row" style="margin-top: 5rem;">
                     <div class="col-lg-6">
                         <div style="margin-top: 140px;">
-                            <h1>Sistem Informasi Arsip Digital</h1>
+                            <h1>Sistem Informasi<br><span>Arsip Digital Desa Cintaraja</span></h1>
+                            
                             <p>Manajemen file arsip dengan mudah dan cepat.</p>
 
                             <br>
@@ -127,14 +163,15 @@
                             <a href="login.php">LOGIN ADMIN / PETUGAS</a>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-
-                        <img src="gambar/depan/2.png">
+                    <div class="col-lg-6 illustration">
+                        
+                        <img src="gambar/depan/2.svg" class="img-responsive" style="margin-top: 5rem;">
                         
                     </div>
                 </div>
 
             </div>
+        </div>
         </div>
 
 
