@@ -66,6 +66,11 @@
         background-color:  #27debf !important;
         color:  #0a574c !important;
     }
+    .btn{
+        background-color:  #27debf !important;
+        color:  #0a574c !important;
+        border-color: #27debf !important;
+    }
 </style>
 <body>
     <div class="left-sidebar-pro">
