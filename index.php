@@ -24,6 +24,10 @@
 
             body {
                 background-image: url(gambar/depan/bg-landing.webp);
+                background-color: #fff;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
                 overflow: hidden;
             }
             .navbar-siad{

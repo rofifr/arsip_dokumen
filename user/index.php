@@ -1,10 +1,22 @@
 <?php include 'header.php'; ?>
 <style>
+    body {
+        background-image: url(../gambar/user/full-bloom.webp);
+    }
     .btn{
         background-color:  #27debf !important;
         color:  #0a574c !important;
         border-color: #27debf !important;
     }
+
+    .breadcome-area .breadcome-list, .analytics-info-cs, .product-sales-chart, .profile-display {
+        border-radius: 0.5rem !important;
+        -webkit-box-shadow: 0px 7px 23px -21px rgba(0,0,0,0.56);
+-moz-box-shadow: 0px 7px 23px -21px rgba(0,0,0,0.56);
+box-shadow: 0px 7px 23px -21px rgba(0,0,0,0.56);
+    }
+
+
 </style>
 <div class="breadcome-area">
     <div class="container-fluid">
@@ -95,7 +107,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 profile-display">
 
                 <?php 
                 $id = $_SESSION['id'];
