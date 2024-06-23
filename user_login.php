@@ -47,6 +47,8 @@
         }
 
         .loginbtn, a{
+            padding: 0.7rem 0;
+            font-weight: 600;
             background-color:  #27debf !important;
             color:  #0a574c !important;
         }

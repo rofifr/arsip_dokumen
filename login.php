@@ -47,13 +47,15 @@
         }
 
         .loginbtn, a{
+            font-weight: 600;
+            padding: 0.7rem 0;
             background-color:  #27debf !important;
             border-color: #27debf !important;
             color:  #0a574c !important;
         }
         </style>
     <div class="error-pagewrap">
-        <div class="error-page-int">
+        <div class="error-page-int user-login-form">
             <div class="text-center m-b-md custom-login">
                 <h3>ARSIP DIGITAL</h3>
                 <h4>Sistem Informasi Arsip Digital</h4>
@@ -118,7 +120,7 @@
                 <a href="index.php">Kembali</a>
             </div>
             <div class="text-center login-footer">
-                <p class="text-muted">Copyright © <?php echo date('Y') ?>. All rights reserved. Sistem Informasi Arsip Digital (SIAD)</p>
+                <p class="text-muted">Copyright © <?php echo date('Y') ?>. Code Crafter</p>
             </div>
         </div>   
     </div>
