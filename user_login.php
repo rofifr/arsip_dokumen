@@ -33,6 +33,7 @@
 
     <style>
         body {
+            color: #0a574c;
             font-family: manrope, sans-serif;
             background-image: url(gambar/user/full-bloom.webp);
         }
@@ -44,6 +45,14 @@
             box-shadow: -2px 8px 31px -24px rgba(0,0,0,0.59);
             -webkit-box-shadow: -2px 8px 31px -24px rgba(0,0,0,0.59);
             -moz-box-shadow: -2px 8px 31px -24px rgba(0,0,0,0.59);
+        }
+
+        .user-login-form img {
+            width: 10rem;
+        }
+
+        .user-login-form h3, p.command {
+            color: #0a574c !important;
         }
 
         .loginbtn, a{
@@ -61,11 +70,13 @@
         <div class="error-page-int user-login-form">
             <div class="text-center m-b-md custom-login">
                 <h3>SISTEM INFORMASI</h3>
-                <h4>ARSIP DIGITAL</h4>
+                <h4>ARSIP DIGITAL DESA CINTARAJA</h4>
 
                 <br>
-
-                <p>Silahkan login untuk mengakses arsip.</p>
+                <img src="assets/img/logo/logo-big.png" alt="Logo-arsip-cintaraja">
+                <br>
+                <br>
+                <p class="command">Silahkan login untuk mengakses arsip.</p>
 
             </div>
             <div class="content-error">
@@ -82,9 +93,6 @@
                 ?>
                 <div class="hpanel">
                     <div class="panel-body">
-
-                        <br>
-                        <br>
                         <center>
                             <h4>LOGIN USER</h4>    
                         </center>

@@ -23,6 +23,7 @@
             }
 
             body {
+                background-image: url(gambar/depan/bg-landing.webp);
                 overflow: hidden;
             }
             .navbar-siad{
@@ -53,7 +54,7 @@
             }
 
             .banner{
-                background: #fff;
+                /* background: #fff; */
                 height: 90vh;
                 border-radius: 0px;
                 padding: 60px 0px;
