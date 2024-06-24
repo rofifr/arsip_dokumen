@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 25 Sep 2020 pada 13.45
--- Versi Server: 10.1.25-MariaDB
--- PHP Version: 5.6.31
+-- Generation Time: Jun 24, 2024 at 05:11 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -34,10 +33,10 @@ CREATE TABLE `admin` (
   `admin_username` varchar(255) NOT NULL,
   `admin_password` varchar(255) NOT NULL,
   `admin_foto` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data untuk tabel `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`admin_id`, `admin_nama`, `admin_username`, `admin_password`, `admin_foto`) VALUES
@@ -46,7 +45,7 @@ INSERT INTO `admin` (`admin_id`, `admin_nama`, `admin_username`, `admin_password
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `arsip`
+-- Table structure for table `arsip`
 --
 
 CREATE TABLE `arsip` (
@@ -59,10 +58,10 @@ CREATE TABLE `arsip` (
   `arsip_kategori` int(11) NOT NULL,
   `arsip_keterangan` text NOT NULL,
   `arsip_file` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data untuk tabel `arsip`
+-- Dumping data for table `arsip`
 --
 
 INSERT INTO `arsip` (`arsip_id`, `arsip_waktu_upload`, `arsip_petugas`, `arsip_kode`, `arsip_nama`, `arsip_jenis`, `arsip_kategori`, `arsip_keterangan`, `arsip_file`) VALUES
@@ -74,22 +73,32 @@ INSERT INTO `arsip` (`arsip_id`, `arsip_waktu_upload`, `arsip_petugas`, `arsip_k
 (7, '2019-10-12 17:04:30', 5, 'MN-005', 'Contoh SPK Proyek Kontraktor', 'pdf', 5, 'Contoh SPK Proyek Kontraktor adalah contoh surat SPK KONTRAK', '142845393_OoPdfFormExample.pdf'),
 (8, '2019-10-12 17:05:22', 5, 'MN-006', 'SPK Kontrak Jembatan', 'pdf', 6, 'Surat SPK Kontrak Jembatan Layang', '106615077_sample-link_1.pdf'),
 (9, '2019-10-12 17:06:55', 6, 'MN-008', 'Contoh Curiculum Vitae Untuk Lamaran Kerja', 'pdf', 10, 'Contoh Curiculum Vitae Untuk Lamaran Kerja untuk pegawai baru', '927990343_pdf-sample(1).pdf'),
-(10, '2019-10-12 17:07:30', 6, 'MN-009', 'Surat Cuti Sakit Pegawai', 'pdf', 7, 'Contoh Surat Cuti Sakit Pegawai baru', '2071946811_PEMBUATAN FILE PDF_FNH_tamim (1).pdf');
+(10, '2019-10-12 17:07:30', 6, 'MN-009', 'Surat Cuti Sakit Pegawai', 'pdf', 7, 'Contoh Surat Cuti Sakit Pegawai baru', '2071946811_PEMBUATAN FILE PDF_FNH_tamim (1).pdf'),
+(11, '2024-06-24 09:33:14', 7, 'SIP-012', 'Surat Keterangan', 'pdf', 4, 'Pelaksanaan Acara 17 agustus', '263759007_Get_Started_With_Smallpdf.pdf'),
+(12, '2024-06-24 09:33:49', 7, 'SK-002', 'Keputusan Lurah', 'pdf', 3, 'Keputusan Baru', '1403231974_Get_Started_With_Smallpdf.pdf'),
+(13, '2024-06-24 09:35:02', 7, 'SKP-005', 'SKP Bulanan', 'pdf', 7, 'SKP Bulan maret 2024', '871919879_Get_Started_With_Smallpdf.pdf'),
+(14, '2024-06-24 09:35:52', 7, 'SIP-013', 'Izin Pameran', 'pdf', 4, 'Surat Izin Pameran ', '1279724218_Get_Started_With_Smallpdf.pdf'),
+(15, '2024-06-24 09:37:05', 7, 'BS-006', 'Bantuan Sosial', 'pdf', 1, 'List Nama yang mendapatkan Bansos Juni 2024', '135248079_Get_Started_With_Smallpdf.pdf'),
+(16, '2024-06-24 09:53:15', 7, 'SPKJ-001', 'Surat perintah', 'pdf', 5, 'Juni 2024', '400980515_Get_Started_With_Smallpdf.pdf'),
+(17, '2024-06-24 09:53:59', 7, 'XAIO111', 'Map Denah', 'pdf', 1, 'Denah', '2076610875_432536246_mamunur.pdf'),
+(18, '2024-06-24 09:54:42', 7, 'SK-004', 'Keputusan', 'pdf', 3, 'Februari 2024', '1109683535_927990343_pdf-sample(1).pdf'),
+(19, '2024-06-24 09:55:13', 7, 'BS-008', 'Bantuan Sosial', 'pdf', 1, 'Januari 2024', '843475070_871919879_Get_Started_With_Smallpdf.pdf'),
+(20, '2024-06-24 09:56:01', 7, 'SIP-012', 'Surat ijin pelaksanaan gotong royong', 'pdf', 4, 'April 2024', '823701013_1403231974_Get_Started_With_Smallpdf (1).pdf');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategori`
+-- Table structure for table `kategori`
 --
 
 CREATE TABLE `kategori` (
   `kategori_id` int(11) NOT NULL,
   `kategori_nama` varchar(255) NOT NULL,
   `kategori_keterangan` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data untuk tabel `kategori`
+-- Dumping data for table `kategori`
 --
 
 INSERT INTO `kategori` (`kategori_id`, `kategori_nama`, `kategori_keterangan`) VALUES
@@ -105,7 +114,7 @@ INSERT INTO `kategori` (`kategori_id`, `kategori_nama`, `kategori_keterangan`) V
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `petugas`
+-- Table structure for table `petugas`
 --
 
 CREATE TABLE `petugas` (
@@ -114,21 +123,21 @@ CREATE TABLE `petugas` (
   `petugas_username` varchar(255) NOT NULL,
   `petugas_password` varchar(255) NOT NULL,
   `petugas_foto` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data untuk tabel `petugas`
+-- Dumping data for table `petugas`
 --
 
 INSERT INTO `petugas` (`petugas_id`, `petugas_nama`, `petugas_username`, `petugas_password`, `petugas_foto`) VALUES
-(4, 'Jhony Andrean', 'petugas1', 'b53fe7751b37e40ff34d012c7774d65f', ''),
-(5, 'Junaidi Mus', 'petugas2', 'ac5604a8b8504d4ff5b842480df02e91', ''),
-(6, 'Jamilah Suanda', 'petugas3', '6f7dc121bccfd778744109cac9593474', '');
+(4, 'Jhony Andrean', 'petugas1', '570c396b3fc856eceb8aa7357f32af1a', ''),
+(6, 'Jamilah Suanda', 'petugas3', '6f7dc121bccfd778744109cac9593474', ''),
+(7, 'Dzulqa', 'aqluzd', '570c396b3fc856eceb8aa7357f32af1a', '');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `riwayat`
+-- Table structure for table `riwayat`
 --
 
 CREATE TABLE `riwayat` (
@@ -136,10 +145,10 @@ CREATE TABLE `riwayat` (
   `riwayat_waktu` datetime NOT NULL,
   `riwayat_user` int(11) NOT NULL,
   `riwayat_arsip` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data untuk tabel `riwayat`
+-- Dumping data for table `riwayat`
 --
 
 INSERT INTO `riwayat` (`riwayat_id`, `riwayat_waktu`, `riwayat_user`, `riwayat_arsip`) VALUES
@@ -152,12 +161,25 @@ INSERT INTO `riwayat` (`riwayat_id`, `riwayat_waktu`, `riwayat_user`, `riwayat_a
 (7, '2019-10-12 17:10:16', 9, 9),
 (8, '2019-10-12 17:10:19', 9, 8),
 (9, '2019-10-12 17:10:22', 9, 6),
-(10, '2019-10-12 17:10:26', 9, 2);
+(10, '2019-10-12 17:10:26', 9, 2),
+(11, '2024-06-24 09:40:08', 9, 15),
+(12, '2024-06-24 09:40:14', 9, 14),
+(13, '2024-06-24 09:40:30', 9, 12),
+(14, '2024-06-24 09:40:39', 9, 14),
+(15, '2024-06-24 09:40:54', 9, 10),
+(16, '2024-06-24 09:40:58', 9, 3),
+(17, '2024-06-24 09:51:10', 8, 2),
+(18, '2024-06-24 09:51:16', 8, 3),
+(19, '2024-06-24 09:51:30', 8, 10),
+(20, '2024-06-24 09:51:33', 8, 13),
+(21, '2024-06-24 09:51:40', 8, 15),
+(22, '2024-06-24 09:51:48', 8, 12),
+(23, '2024-06-24 09:51:56', 8, 9);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -166,15 +188,15 @@ CREATE TABLE `user` (
   `user_username` varchar(100) NOT NULL,
   `user_password` varchar(100) NOT NULL,
   `user_foto` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`user_id`, `user_nama`, `user_username`, `user_password`, `user_foto`) VALUES
-(8, 'Samsul Bahri', 'user1', '24c9e15e52afc47c225b757e7bee1f9d', ''),
-(9, 'Reza Yuzanni', 'user2', '7e58d63b60197ceb55a1c487989a3720', ''),
+(8, 'Rofi Faturohman', 'user1', '6ad14ba9986e3615423dfca256d04e3f', ''),
+(9, 'Dzulqa Fauzan Abdillah', 'user2', '7e58d63b60197ceb55a1c487989a3720', ''),
 (10, 'Ajir Muhajier', 'user3', '92877af70a45fd6a2ed7fe81e1236b78', ''),
 (11, 'Cut Nanda Somay', 'user4', '3f02ebe3d7929b091e3d8ccfde2f3bc6', '');
 
@@ -192,7 +214,11 @@ ALTER TABLE `admin`
 -- Indexes for table `arsip`
 --
 ALTER TABLE `arsip`
-  ADD PRIMARY KEY (`arsip_id`);
+  ADD PRIMARY KEY (`arsip_id`),
+  ADD KEY `arsip_kategori` (`arsip_kategori`),
+  ADD KEY `arsip_petugas` (`arsip_petugas`),
+  ADD KEY `arsip_jenis` (`arsip_jenis`),
+  ADD KEY `arsip_jenis_2` (`arsip_jenis`);
 
 --
 -- Indexes for table `kategori`
@@ -227,31 +253,47 @@ ALTER TABLE `user`
 --
 ALTER TABLE `admin`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `arsip`
 --
 ALTER TABLE `arsip`
-  MODIFY `arsip_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `arsip_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
 --
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
   MODIFY `kategori_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 --
 -- AUTO_INCREMENT for table `petugas`
 --
 ALTER TABLE `petugas`
-  MODIFY `petugas_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `petugas_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT for table `riwayat`
 --
 ALTER TABLE `riwayat`
-  MODIFY `riwayat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `riwayat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;COMMIT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `arsip`
+--
+ALTER TABLE `arsip`
+  ADD CONSTRAINT `arsip_ibfk_1` FOREIGN KEY (`arsip_kategori`) REFERENCES `kategori` (`kategori_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
