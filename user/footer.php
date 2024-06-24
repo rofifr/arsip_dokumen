@@ -1,10 +1,12 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class="footer-copyright-area mg-t-30">
+<style>
+	.footer-page {
+		position: fixed;
+		left: 0;
+  	bottom: 0;
+  	width: 100%;
+	}
+</style>
+<div class="footer-copyright-area mg-t-30 footer-page">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-12">

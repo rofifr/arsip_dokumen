@@ -49,7 +49,9 @@ body {
   height: 100%;
   font-family: Manrope, sans-serif !important;
   font-weight: 400;
-  background: #f6f8fa;
+  background-image: url(../gambar/user/full-bloom.webp);
+  background-color: #f9fffe;
+  background-position: center;
 }
 .floatleft {
   float: left;
