@@ -83,7 +83,7 @@
 
                         <div class="form-group">
                             <label>File</label>
-                            <input type="file" name="file">
+                            <input type="file" name="file" required="required">
                         </div>
 
                         <div class="form-group">
