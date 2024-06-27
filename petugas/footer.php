@@ -4,7 +4,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="footer-copy-right">
-					<p>Copyright © <?php echo date('Y') ?>. Sistem Informasi Arsip Digital. All rights reserved.</p>
+					<p>Copyright © <?php echo date('Y') ?>. Code Crafter</p>
 				</div>
 			</div>
 		</div>
@@ -66,7 +66,7 @@
 				$tgl = date('Y/m/d',strtotime($p['riwayat_waktu']));
 				$jumlah = mysqli_query($koneksi,"select * from riwayat where date(riwayat_waktu)='$tgl'");
 				$j = mysqli_num_rows($jumlah);
-				?>
+				?>,
 				{
 					period: '<?php echo date('Y-m-d',strtotime($p['riwayat_waktu'])) ?>',
 					Unduh: <?php echo $j ?>,

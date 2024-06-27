@@ -143,7 +143,7 @@
                                                                            <p>
                                                                             <small><i><?php echo date('H:i:s  d-m-Y',strtotime($p['riwayat_waktu'])) ?></i></small>
                                                                             <br>
-                                                                            <b><?php echo $p['user_nama'] ?></b> menunduh <b><?php echo $p['arsip_nama'] ?></b>.
+                                                                            <b><?php echo $p['user_nama'] ?></b> mengunduh <b><?php echo $p['arsip_nama'] ?></b>.
                                                                         </p>
                                                                     </div>
                                                                 </a>
@@ -171,7 +171,7 @@
                                                   <?php }else{ ?>
                                                     <img src="../gambar/petugas/<?php echo $profil['petugas_foto'] ?>" style="width: 20px;height: 20px">
                                                 <?php } ?>
-                                                <span style="color:#0a574c;" class="admin-name"><?php echo $_SESSION['nama']; ?>  <b>Petugas</b> </span>
+                                                <span style="color:#0a574c;" class="admin-name"><?php echo $_SESSION['nama']; ?> - <b>Petugas</b> </span>
                                                 <i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
                                             </a>
                                             <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
