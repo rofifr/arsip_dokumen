@@ -106,7 +106,10 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="password">Password</label>
+                                <div style="display: flex; align-items: center;">
                                 <input type="password" title="Please enter your password" placeholder="******" required="required" autocomplete="off" name="password" id="password" class="form-control">
+                                <span id="eyeIcon" style="padding: 10px; background-color: #e5e6e7; cursor: pointer;"><i class="fa fa-eye"></i></span>
+                                </div>
                             </div>
 
                             <input type="submit" class="btn btn-block loginbtn" value="Login">
