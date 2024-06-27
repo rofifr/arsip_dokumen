@@ -1,40 +1,36 @@
 (function ($) {
- "use strict";
- 
-	
-	
-	
-	 $("span.pie").peity("pie", {
-        fill: ['#006DF0', '#d7d7d7', '#ffffff']
-    })
+  "use strict";
 
-    $(".line").peity("line",{
-        fill: '#006DF0',
-        stroke:'#169c81',
-    })
+  $("span.pie").peity("pie", {
+    fill: ["#27debf", "#d7d7d7", "#ffffff"],
+  });
 
-    $(".bar").peity("bar", {
-        fill: ["#006DF0", "#d7d7d7"]
-    })
+  $(".line").peity("line", {
+    fill: "#27debf",
+    stroke: "#169c81",
+  });
 
-    $(".bar_dashboard").peity("bar", {
-        fill: ["#006DF0", "#d7d7d7"],
-        width:100
-    })
+  $(".bar").peity("bar", {
+    fill: ["#27debf", "#d7d7d7"],
+  });
 
-    var updatingChart = $(".updating-chart").peity("line", { fill: '#006DF0',stroke:'#169c81', width: 64 })
+  $(".bar_dashboard").peity("bar", {
+    fill: ["#27debf", "#d7d7d7"],
+    width: 100,
+  });
 
-    setInterval(function() {
-        var random = Math.round(Math.random() * 10)
-        var values = updatingChart.text().split(",")
-        values.shift()
-        values.push(random)
+  var updatingChart = $(".updating-chart").peity("line", {
+    fill: "#27debf",
+    stroke: "#169c81",
+    width: 64,
+  });
 
-        updatingChart
-            .text(values.join(","))
-            .change()
-    }, 1000);
-	
-	
-	
-})(jQuery); 
+  setInterval(function () {
+    var random = Math.round(Math.random() * 10);
+    var values = updatingChart.text().split(",");
+    values.shift();
+    values.push(random);
+
+    updatingChart.text(values.join(",")).change();
+  }, 1000);
+})(jQuery);

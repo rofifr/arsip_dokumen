@@ -1,11 +1,5 @@
 <?php include 'header.php'; ?>
-<style>
-    .btn{
-        background-color:  #27debf !important;
-        color:  #0a574c !important;
-        border-color: #27debf !important;
-    }
-</style>
+
 <div class="breadcome-area">
     <div class="container-fluid">
         <div class="row">
@@ -83,7 +77,7 @@
 
                         <div class="form-group">
                             <label>File</label>
-                            <input type="file" name="file" required="required">
+                            <input type="file" name="file">
                         </div>
 
                         <div class="form-group">

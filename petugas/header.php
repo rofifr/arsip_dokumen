@@ -7,11 +7,8 @@
     <title>Petugas - Sistem Informasi Arsip Digital</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="../assets/img/logo/title-icon.png"
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/css/owl.carousel.css">
@@ -45,40 +42,11 @@
     ?>
 </head>
 <body>
-<style>
-    .header-top-area{
-        background-color:  #27debf !important;
-        color:  #0a574c !important;
-    }
-
-    .header-text {
-        font-size: 1rem !important;
-        font-weight: 600;
-    }
-    .nav-link{
-        font-family: manrope, sans-serif;
-        font-size: 16px;
-        color: #0a574c !important;
-    }
-    .admin-name{
-        font-family: manrope, sans-serif;
-        color: #0a574c !important;
-    }
-    .footer-copyright-area{
-        background-color:  #27debf !important;
-        color:  #0a574c !important;
-    }
-    .btn{
-        background-color:  #27debf !important;
-        color:  #0a574c !important;
-        border-color: #27debf !important;
-    }
-</style>
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
-                <a href="index.php"><img class="main-logo" src="../assets/img/logo/logo.png" alt="" /></a>
-                <strong><a href="index.php"><img src="../assets/img/logo/logosn.png" alt="" /></a></strong>
+                <a href="index.html"><img class="main-logo" src="../assets/img/logo/logo.png" alt="" /></a>
+                <strong><a href="index.html"><img src="../assets/img/logo/logosn.png" alt="" /></a></strong>
             </div>
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
 
@@ -134,7 +102,7 @@
         </div>
         <div class="header-advance-area">
             <div class="header-top-area">
-                <div class="container-fluid">
+                <div class="container-fluid" >
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="header-top-wraper">
@@ -142,14 +110,14 @@
                                     <div class="col-lg-1 col-md-0 col-sm-12 col-xs-12">
                                         <div class="menu-switcher-pro">
                                             <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn">
-                                                <i class="educate-icon educate-nav"></i>
+                                                <i  style="color:#0a574c;" class="educate-icon educate-nav"></i>
                                             </button>
                                         </div>
                                     </div>
                                     <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
                                         <div class="header-top-menu tabl-d-n">
                                             <ul class="nav navbar-nav mai-top-nav">
-                                                <li class="nav-item"><a href="#" class="nav-link header-text">Sistem Informasi Arsip Digital</a></li>
+                                                <li class="nav-item"><a href="#" style="color:#0a574c;font-weight:bold;" class="nav-link">Sistem Informasi Arsip Digital</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -158,7 +126,7 @@
                                             <ul class="nav navbar-nav mai-top-nav header-right-menu">
 
                                                 <li class="nav-item">
-                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="educate-icon educate-bell" aria-hidden="true"></i><span class="indicator-nt"></span></a>
+                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i style="color:#0a574c;" class="educate-icon educate-bell" aria-hidden="true"></i><span class="indicator-nt"></span></a>
                                                     <div role="menu" class="notification-author dropdown-menu animated zoomIn">
                                                         <div class="notification-single-top">
                                                             <h1>Riwayat unduh arsip saya</h1>
@@ -175,7 +143,7 @@
                                                                            <p>
                                                                             <small><i><?php echo date('H:i:s  d-m-Y',strtotime($p['riwayat_waktu'])) ?></i></small>
                                                                             <br>
-                                                                            <b><?php echo $p['user_nama'] ?></b> mengunduh <b><?php echo $p['arsip_nama'] ?></b>.
+                                                                            <b><?php echo $p['user_nama'] ?></b> menunduh <b><?php echo $p['arsip_nama'] ?></b>.
                                                                         </p>
                                                                     </div>
                                                                 </a>
@@ -203,7 +171,7 @@
                                                   <?php }else{ ?>
                                                     <img src="../gambar/petugas/<?php echo $profil['petugas_foto'] ?>" style="width: 20px;height: 20px">
                                                 <?php } ?>
-                                                <span class="admin-name"><?php echo $_SESSION['nama']; ?> - <b>Petugas</b> </span>
+                                                <span style="color:#0a574c;" class="admin-name"><?php echo $_SESSION['nama']; ?>  <b>Petugas</b> </span>
                                                 <i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
                                             </a>
                                             <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">

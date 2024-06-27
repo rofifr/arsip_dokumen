@@ -1,11 +1,5 @@
 <?php include 'header.php'; ?>
-<style>
-    .btn{
-        background-color:  #27debf !important;
-        color:  #0a574c !important;
-        border-color: #27debf !important;
-    }
-</style>
+
 <div class="breadcome-area">
     <div class="container-fluid">
         <div class="row">
@@ -136,7 +130,7 @@
                     </div>
                     <ul class="list-inline cus-product-sl-rp">
                         <li>
-                            <h5><i class="fa fa-circle" style="color: #006DF0;"></i>Jumlah Unduhan</h5>
+                            <h5><i class="fa fa-circle" style="color:  #27debf;"></i>Jumlah Unduhan</h5>
                         </li>
                     </ul>
                     <div id="extra-area-chart" style="height: 356px;"></div>

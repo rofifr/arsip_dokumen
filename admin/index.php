@@ -130,7 +130,7 @@
                     </div>
                     <ul class="list-inline cus-product-sl-rp">
                         <li>
-                            <h5><i class="fa fa-circle" style="color: #006DF0;"></i>Jumlah Unduhan</h5>
+                            <h5><i class="fa fa-circle" style="color: #27debf;"></i>Jumlah Unduhan</h5>
                         </li>
                     </ul>
                     <div id="extra-area-chart" style="height: 356px;"></div>

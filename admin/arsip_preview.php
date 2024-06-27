@@ -1,11 +1,4 @@
 <?php include 'header.php'; ?>
-<style>
-    .btn{
-        background-color:  #27debf !important;
-        color:  #0a574c !important;
-        border-color: #27debf !important;
-    }
-</style>
 <div class="breadcome-area">
     <div class="container-fluid">
         <div class="row">

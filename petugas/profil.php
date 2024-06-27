@@ -1,11 +1,5 @@
 <?php include 'header.php'; ?>
-<style>
-    .btn{
-        background-color:  #27debf !important;
-        color:  #0a574c !important;
-        border-color: #27debf !important;
-    }
-</style>
+
 <div class="breadcome-area">
     <div class="container-fluid">
         <div class="row">
@@ -75,7 +69,7 @@
                 <?php 
                 if(isset($_GET['alert'])){
                     if($_GET['alert'] == "sukses"){
-                        echo "<div class='alert alert-success'>Data anda berhasil diganti!</div>";
+                        echo "<div class='alert alert-success'>Password anda berhasil diganti!</div>";
                     }
                 }
                 ?>

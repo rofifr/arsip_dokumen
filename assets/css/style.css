@@ -7,9 +7,9 @@ table .btn {
 }
 
 .btn-primary {
-  background: #006df0;
+  background: #27debf;
   color: white !important;
-  border: 1px solid #006df0;
+  border: 1px solid #27debf;
 }
 
 .btn-primary:hover {
@@ -47,6 +47,7 @@ table .btn {
 }
 
 .footer-copyright-area {
+  background: #27debf;
   margin-top: 100px;
 }
 

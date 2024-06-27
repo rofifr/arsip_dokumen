@@ -1,18 +1,10 @@
-<style>
-	.footer-page {
-		position: fixed;
-		left: 0;
-  	bottom: 0;
-  	width: 100%;
-		z-index: 10;
-	}
-</style>
-<div class="footer-copyright-area mg-t-30 footer-page">
+
+<div class="footer-copyright-area mg-t-30">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="footer-copy-right">
-					<p style="color: #0a574c;">Copyright © <?php echo date('Y') ?>. Code Crafter</p>
+					<p>Copyright © <?php echo date('Y') ?>. Sistem Informasi Arsip Digital. All rights reserved.</p>
 				</div>
 			</div>
 		</div>
@@ -74,7 +66,7 @@
 				$tgl = date('Y/m/d',strtotime($p['riwayat_waktu']));
 				$jumlah = mysqli_query($koneksi,"select * from riwayat where date(riwayat_waktu)='$tgl'");
 				$j = mysqli_num_rows($jumlah);
-				?>,
+				?>
 				{
 					period: '<?php echo date('Y-m-d',strtotime($p['riwayat_waktu'])) ?>',
 					Unduh: <?php echo $j ?>,
@@ -91,12 +83,12 @@
 			xLabelAngle: 45,
 			pointSize: 3,
 			fillOpacity: 0,
-			pointStrokeColors:['#006DF0'],
+			pointStrokeColors:[' #27debf'],
 			behaveLikeLine: true,
 			gridLineColor: '#e0e0e0',
 			lineWidth: 1,
 			hideHover: 'auto',
-			lineColors: ['#006DF0'],
+			lineColors: [' #27debf'],
 			resize: true
 
 		});

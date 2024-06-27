@@ -77,7 +77,7 @@
                     </div>
                     <ul class="list-inline cus-product-sl-rp">
                         <li>
-                            <h5><i class="fa fa-circle" style="color: #006DF0;"></i>CSE</h5>
+                            <h5><i class="fa fa-circle" style="color: #27debf;"></i>CSE</h5>
                         </li>
                         <li>
                             <h5><i class="fa fa-circle" style="color: #933EC5;"></i>Accounting</h5>
@@ -356,7 +356,7 @@
                   </div>
                   <ul class="list-inline cus-product-sl-rp">
                     <li>
-                        <h5><i class="fa fa-circle" style="color: #006DF0;"></i>Python</h5>
+                        <h5><i class="fa fa-circle" style="color: #27debf;"></i>Python</h5>
                     </li>
                     <li>
                         <h5><i class="fa fa-circle" style="color: #933EC5;"></i>PHP</h5>
