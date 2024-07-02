@@ -80,7 +80,6 @@
                             <a href="riwayat.php" aria-expanded="false"><span class="educate-icon educate-form icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Riwayat Unduh</span></a>
                         </li>
 
-
                         <li>
                             <a href="gantipassword.php" aria-expanded="false"><span class="educate-icon educate-danger icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Ganti Password</span></a>
                         </li>
@@ -145,7 +144,7 @@
                                                                 <li>
                                                                     <a href="riwayat.php">
                                                                         <div class="notification-content">
-                                                                           <p>
+                                                                            <p>
                                                                             <small><i><?php echo date('H:i:s  d-m-Y',strtotime($p['riwayat_waktu'])) ?></i></small>
                                                                             <br>
                                                                             <b><?php echo $p['user_nama'] ?></b> mengunduh <b><?php echo $p['arsip_nama'] ?></b>.
@@ -171,9 +170,9 @@
                                                     $profil = mysqli_query($koneksi,"select * from admin where admin_id='$id_admin'");
                                                     $profil = mysqli_fetch_assoc($profil);
                                                     if($profil['admin_foto'] == ""){ 
-                                                      ?>
-                                                      <img src="../gambar/sistem/user.png" style="width: 20px;height: 20px">
-                                                  <?php }else{ ?>
+                                                    ?>
+                                                    <img src="../gambar/sistem/user.png" style="width: 20px;height: 20px">
+                                                <?php }else{ ?>
                                                     <img src="../gambar/admin/<?php echo $profil['admin_foto'] ?>" style="width: 20px;height: 20px">
                                                 <?php } ?>
                                                 <span style="color:#0a574c;"  class="admin-name"><?php echo $_SESSION['nama']; ?> -  <b>Administrator</b> </span>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 24, 2024 at 05:11 AM
+-- Generation Time: Jul 02, 2024 at 02:04 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `arsip_kita`
+-- Database: `arsip_aja`
 --
 
 -- --------------------------------------------------------
@@ -83,7 +83,11 @@ INSERT INTO `arsip` (`arsip_id`, `arsip_waktu_upload`, `arsip_petugas`, `arsip_k
 (17, '2024-06-24 09:53:59', 7, 'XAIO111', 'Map Denah', 'pdf', 1, 'Denah', '2076610875_432536246_mamunur.pdf'),
 (18, '2024-06-24 09:54:42', 7, 'SK-004', 'Keputusan', 'pdf', 3, 'Februari 2024', '1109683535_927990343_pdf-sample(1).pdf'),
 (19, '2024-06-24 09:55:13', 7, 'BS-008', 'Bantuan Sosial', 'pdf', 1, 'Januari 2024', '843475070_871919879_Get_Started_With_Smallpdf.pdf'),
-(20, '2024-06-24 09:56:01', 7, 'SIP-012', 'Surat ijin pelaksanaan gotong royong', 'pdf', 4, 'April 2024', '823701013_1403231974_Get_Started_With_Smallpdf (1).pdf');
+(20, '2024-06-24 09:56:01', 7, 'SIP-012', 'Surat ijin pelaksanaan gotong royong', 'pdf', 4, 'April 2024', '823701013_1403231974_Get_Started_With_Smallpdf (1).pdf'),
+(42, '2024-07-02 10:29:33', 7, 'SIP-012', 'Bantuan Sosial', 'pdf', 1, 'daw', '854802989_Get_Started_With_Smallpdf.pdf'),
+(43, '2024-07-02 11:09:27', 7, 'SK-002', 'Surat Keputusan Lurah', 'pdf', 3, 'dadadadad', '1476091736_document (1).pdf'),
+(44, '2024-07-02 11:09:58', 7, 'SIP-013', 'Pelaksanaan acara 17 Agustus', 'pdf', 4, 'Lapangan desa Cintaraja', '648203996_400980515_Get_Started_With_Smallpdf.pdf'),
+(45, '2024-07-02 14:34:17', 4, 'SKP-005', 'SKP Juni', 'pdf', 7, 'kakajnas', '21577541_400980515_Get_Started_With_Smallpdf.pdf');
 
 -- --------------------------------------------------------
 
@@ -110,6 +114,29 @@ INSERT INTO `kategori` (`kategori_id`, `kategori_nama`, `kategori_keterangan`) V
 (7, 'Surat Kesehatan Pegawai', 'Surat kesehatan untuk pegawai'),
 (8, 'Surat Lampiran Skripsi', 'Surat contoh lampiran untuk skripsi'),
 (10, 'Curiculum Vitae', 'Contoh format surat curiculum vitae untuk kenaikan jabatan');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `laporan`
+--
+
+CREATE TABLE `laporan` (
+  `laporan_id` int(11) NOT NULL,
+  `laporan_waktu` datetime NOT NULL,
+  `laporan_petugas` int(11) NOT NULL,
+  `laporan_arsip` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `laporan`
+--
+
+INSERT INTO `laporan` (`laporan_id`, `laporan_waktu`, `laporan_petugas`, `laporan_arsip`) VALUES
+(7, '2024-07-02 10:29:33', 7, 'Bantuan Sosial'),
+(8, '2024-07-02 11:09:27', 7, 'Surat Keputusan Lurah'),
+(9, '2024-07-02 11:09:58', 7, 'Pelaksanaan acara 17 Agustus'),
+(10, '2024-07-02 14:34:17', 4, 'SKP Juni');
 
 -- --------------------------------------------------------
 
@@ -227,6 +254,15 @@ ALTER TABLE `kategori`
   ADD PRIMARY KEY (`kategori_id`);
 
 --
+-- Indexes for table `laporan`
+--
+ALTER TABLE `laporan`
+  ADD PRIMARY KEY (`laporan_id`),
+  ADD KEY `petugas_id` (`laporan_petugas`),
+  ADD KEY `laporan_petugas` (`laporan_petugas`),
+  ADD KEY `arsip_id` (`laporan_arsip`);
+
+--
 -- Indexes for table `petugas`
 --
 ALTER TABLE `petugas`
@@ -258,13 +294,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `arsip`
 --
 ALTER TABLE `arsip`
-  MODIFY `arsip_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `arsip_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
   MODIFY `kategori_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `laporan`
+--
+ALTER TABLE `laporan`
+  MODIFY `laporan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `petugas`
