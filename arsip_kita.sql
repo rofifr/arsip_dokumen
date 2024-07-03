@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 02, 2024 at 02:04 PM
+-- Generation Time: Jul 03, 2024 at 06:50 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `arsip_aja`
+-- Database: `arsip_kita`
 --
 
 -- --------------------------------------------------------
@@ -40,7 +40,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`admin_id`, `admin_nama`, `admin_username`, `admin_password`, `admin_foto`) VALUES
-(1, 'Administrator', 'admin', '0192023a7bbd73250516f069df18b500', '1471275613_Screen Shot 2019-10-11 at 16.26.42.png');
+(1, 'Administrator', 'admin', '0192023a7bbd73250516f069df18b500', '1119038949_profile.png');
 
 -- --------------------------------------------------------
 
@@ -201,7 +201,8 @@ INSERT INTO `riwayat` (`riwayat_id`, `riwayat_waktu`, `riwayat_user`, `riwayat_a
 (20, '2024-06-24 09:51:33', 8, 13),
 (21, '2024-06-24 09:51:40', 8, 15),
 (22, '2024-06-24 09:51:48', 8, 12),
-(23, '2024-06-24 09:51:56', 8, 9);
+(23, '2024-06-24 09:51:56', 8, 9),
+(24, '2024-07-03 11:08:11', 8, 45);
 
 -- --------------------------------------------------------
 
@@ -318,7 +319,7 @@ ALTER TABLE `petugas`
 -- AUTO_INCREMENT for table `riwayat`
 --
 ALTER TABLE `riwayat`
-  MODIFY `riwayat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `riwayat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `user`
