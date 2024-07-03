@@ -34,18 +34,17 @@
         <form method="post" action="">
             <label for="filter">Filter berdasarkan:</label>
             <select name="filter" id="filter">
-                <option value="all">All Time</option>
-                <option value="7">7 Hari</option>
-                <option value="30">30 Hari</option>
-                <option value="365">365 Hari</option>
+                <option value="all" <?php if(isset($_POST['filter']) && $_POST['filter'] == 'all') echo 'selected'; ?>>All Time</option>
+                <option value="7" <?php if(isset($_POST['filter']) && $_POST['filter'] == '7') echo 'selected'; ?>>7 Hari</option>
+                <option value="30" <?php if(isset($_POST['filter']) && $_POST['filter'] == '30') echo 'selected'; ?>>30 Hari</option>
+                <option value="365" <?php if(isset($_POST['filter']) && $_POST['filter'] == '365') echo 'selected'; ?>>365 Hari</option>
             </select>
             <button type="submit">Terapkan</button>
         </form>
         <br>
 
             <div class="pull-right">
-                <a href="export_laporan.php" class="btn btn-primary"><i class="fa fa-print"></i> Cetak Laporan</a>
-                <input type="hidden" name="filter" value="<?php echo isset($_POST['filter']) ? $_POST['filter'] : 'all'; ?>">
+                <a href="export_laporan.php" class="btn btn-primary"><i class="fa fa-print" ></i> Cetak Laporan</a>
             </div>
             
             <br>
@@ -91,6 +90,13 @@
                     ORDER BY laporan.laporan_waktu DESC";
 
                     $result = mysqli_query($koneksi, $query);
+
+                    // Periksa kesalahan query
+                    if (!$result) {
+                        echo 'Error: ' . mysqli_error($koneksi);
+                        exit;
+                    }
+
                     $no = 1;
                     if ($result->num_rows > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {
@@ -104,18 +110,14 @@
                                 </tr>';
                             $no++;
                         }
+                    } else {
+                        echo '<tr><td colspan="4">Tidak ada data yang ditemukan untuk kriteria yang dipilih.</td></tr>';
                     }
-
-                    echo '</table>';
-                    ?>
+                ?>
                 </tbody>
             </table>
-
-
         </div>
-
     </div>
 </div>
-
 
 <?php include 'footer.php'; ?>
