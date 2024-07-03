@@ -117,7 +117,7 @@ box-shadow: 0px 7px 23px -21px rgba(0,0,0,0.56);
                 <div class="single-cards-item">
                     <div class="single-product-image">
                         <a href="#">
-                            <img src="../assets/img/product/profile-bg.jpg" alt="">
+                            <img src="../assets/img/product/profil-bg.png" alt="">
                         </a>
                     </div>
 

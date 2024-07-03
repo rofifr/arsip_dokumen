@@ -179,7 +179,7 @@
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                 <div class="single-cards-item">
                     <div class="single-product-image">
-                        <a href="#"><img src="../assets/img/product/profile-bg.jpg" alt=""></a>
+                        <a href="#"><img src="../assets/img/product/profil-bg.png" alt=""></a>
                     </div>
                     <div class="single-product-text">
                         <img src="../assets/img/product/pro4.jpg" alt="">
