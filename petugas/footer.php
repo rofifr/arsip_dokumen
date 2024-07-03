@@ -1,10 +1,10 @@
 
-<div class="footer-copyright-area mg-t-30">
+<div class="footer-copyright-area mg-t-30" style="position: fixed; left: 0; bottom: 0; width: 100%;">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="footer-copy-right">
-					<p>Copyright © <?php echo date('Y') ?>. Code Crafter</p>
+					<p style="color: #0a574c;">Copyright © <?php echo date('Y') ?>. Code Crafter</p>
 				</div>
 			</div>
 		</div>

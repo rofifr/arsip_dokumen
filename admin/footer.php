@@ -1,7 +1,7 @@
 <style>
 
 </style>
-<div class="footer-copyright-area mg-t-30">
+<div class="footer-copyright-area mg-t-30" style="position: fixed; left: 0; bottom: 0; width: 100%;">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-12">
