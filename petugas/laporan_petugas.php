@@ -1,5 +1,7 @@
-<?php include 'header.php'; ?>
-<?php
+<?php 
+include 'header.php';
+include '../koneksi.php';
+
 
 // Periksa apakah petugas sudah login
 if (!isset($_SESSION['id'])) {
@@ -9,33 +11,6 @@ if (!isset($_SESSION['id'])) {
 
 // Mendapatkan id petugas dari sesi
 $petugas_id = $_SESSION['id'];
-
-$filter = isset($_POST['filter']) ? $_POST['filter'] : 'all';
-
-$whereClause = "WHERE laporan.laporan_petugas = $petugas_id ";
-switch ($filter) {
-    case '7':
-        $whereClause .= "AND laporan_waktu >= NOW() - INTERVAL 7 DAY";
-        break;
-    case '30':
-        $whereClause .= "AND laporan_waktu >= NOW() - INTERVAL 30 DAY";
-        break;
-    case '365':
-        $whereClause .= "AND laporan_waktu >= NOW() - INTERVAL 365 DAY";
-        break;
-    case 'all':
-    default:
-        // No additional where clause for "all time"
-        break;
-}
-
-$query = "
-SELECT laporan.laporan_id, laporan.laporan_waktu, petugas.petugas_nama, laporan.laporan_arsip 
-FROM laporan 
-JOIN petugas ON laporan.laporan_petugas = petugas.petugas_id
-$whereClause
-ORDER BY laporan.laporan_waktu DESC";
-$result = mysqli_query($koneksi, $query);
 ?>
 
 <div class="breadcome-area">
@@ -72,20 +47,17 @@ $result = mysqli_query($koneksi, $query);
         <form method="post" action="">
             <label for="filter">Filter berdasarkan:</label>
             <select name="filter" id="filter">
-                <option value="all">All Time</option>
-                <option value="7">7 Hari</option>
-                <option value="30">30 Hari</option>
-                <option value="365">365 Hari</option>
+                <option value="all" <?php if(isset($_POST['filter']) && $_POST['filter'] == 'all') echo 'selected'; ?>>All Time</option>
+                <option value="7" <?php if(isset($_POST['filter']) && $_POST['filter'] == '7') echo 'selected'; ?>>7 Hari</option>
+                <option value="30" <?php if(isset($_POST['filter']) && $_POST['filter'] == '30') echo 'selected'; ?>>30 Hari</option>
+                <option value="365" <?php if(isset($_POST['filter']) && $_POST['filter'] == '365') echo 'selected'; ?>>365 Hari</option>
             </select>
             <button type="submit">Terapkan</button>
         </form>
         <br>
 
             <div class="pull-right">
-                <form action="export_laporan_petugas.php" method="post">
-                    <input type="hidden" name="filter" value="<?php echo isset($_POST['filter']) ? $_POST['filter'] : 'all'; ?>">
-                    <button type="submit" class="btn btn-primary"><i class="fa fa-print"></i> Cetak Laporan</button>
-                </form>
+                <a href="export_laporan_petugas.php" class="btn btn-primary"><i class="fa fa-print" ></i> Cetak Laporan</a>
             </div>
             
             <br>
@@ -102,6 +74,41 @@ $result = mysqli_query($koneksi, $query);
                 </thead>
                 <tbody>
                 <?php
+
+                    $filter = isset($_POST['filter']) ? $_POST['filter'] : 'all';
+
+                    $whereClause = "WHERE laporan.laporan_petugas = $petugas_id ";
+                    switch ($filter) {
+                        case '7':
+                            $whereClause .= "AND laporan_waktu >= NOW() - INTERVAL 7 DAY";
+                            break;
+                        case '30':
+                            $whereClause .= "AND laporan_waktu >= NOW() - INTERVAL 30 DAY";
+                            break;
+                        case '365':
+                            $whereClause .= "AND laporan_waktu >= NOW() - INTERVAL 365 DAY";
+                            break;
+                        case 'all':
+                        default:
+                            // No additional where clause
+                            break;
+                    }
+
+                    $query = "
+                    SELECT laporan.laporan_id, laporan.laporan_waktu, petugas.petugas_nama, laporan.laporan_arsip 
+                    FROM laporan 
+                    JOIN petugas ON laporan.laporan_petugas = petugas.petugas_id
+                    $whereClause
+                    ORDER BY laporan.laporan_waktu DESC";
+
+                    $result = mysqli_query($koneksi, $query);
+
+                    // Periksa kesalahan query
+                    if (!$result) {
+                        echo 'Error: ' . mysqli_error($koneksi);
+                        exit;
+                    }
+
                     $no = 1;
                     if ($result->num_rows > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {
@@ -115,6 +122,8 @@ $result = mysqli_query($koneksi, $query);
                                 </tr>';
                             $no++;
                         }
+                    } else {
+                        echo '<tr><td colspan="4">Tidak ada data yang ditemukan untuk kriteria yang dipilih.</td></tr>';
                     }
                 ?>
                 </tbody>
