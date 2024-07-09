@@ -32,36 +32,6 @@
 
 <div class="container-fluid">
     <div class="panel">
-        <div class="panel-body">
-            <form method="get" action="">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="form-group">
-                            <label>Filter Kategori</label>
-                            <select class="form-control" name="kategori" required="required">
-                                <option value="">Pilih kategori</option>
-                                <?php 
-                                $kategori = mysqli_query($koneksi,"SELECT * FROM kategori");
-                                while($k = mysqli_fetch_array($kategori)){
-                                    ?>
-                                    <option <?php if(isset($_GET['kategori'])){if($_GET['kategori'] == $k['kategori_id']){echo "selected='selected'";}} ?> value="<?php echo $k['kategori_id']; ?>"><?php echo $k['kategori_nama']; ?></option>
-                                    <?php 
-                                }
-                                ?>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <br>
-                        <input type="submit" class="btn btn-primary" value="Tampilkan">
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <div class="panel">
         <div class="panel-heading">
             <h3 class="panel-title">Data arsip</h3>
         </div>
@@ -81,12 +51,8 @@
                 <tbody>
                     <?php 
                     $no = 1;
-                    if(isset($_GET['kategori'])){
-                        $kategori = $_GET['kategori'];
-                        $arsip = mysqli_query($koneksi,"SELECT * FROM arsip,kategori,petugas WHERE arsip_petugas=petugas_id and arsip_kategori=kategori_id and arsip_kategori='$kategori' AND kategori_nama='public' ORDER BY arsip_id DESC");
-                    }else{
-                        $arsip = mysqli_query($koneksi,"SELECT * FROM arsip,kategori,petugas WHERE arsip_petugas=petugas_id and arsip_kategori=kategori_id AND kategori_nama='public' ORDER BY arsip_id DESC");
-                    }
+                    // Mengambil data arsip dengan kategori 'public'
+                    $arsip = mysqli_query($koneksi,"SELECT * FROM arsip,kategori,petugas WHERE arsip_petugas=petugas_id and arsip_kategori=kategori_id AND kategori_nama='public' ORDER BY arsip_id DESC");
                     while($p = mysqli_fetch_array($arsip)){
                         ?>
                         <tr>
