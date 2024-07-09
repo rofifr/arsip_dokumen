@@ -31,16 +31,10 @@
 </div>
 
 <div class="container-fluid">
-
-
     <div class="panel">
-
         <div class="panel-body">
-
             <form method="get" action="">
-
                 <div class="row">
-
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label>Filter Kategori</label>
@@ -62,24 +56,16 @@
                         <br>
                         <input type="submit" class="btn btn-primary" value="Tampilkan">
                     </div>
-
                 </div>
-
             </form>
-
         </div>
-
     </div>
 
-
-
     <div class="panel">
-
         <div class="panel-heading">
             <h3 class="panel-title">Data arsip</h3>
         </div>
         <div class="panel-body">
-
             <table id="table" class="table table-bordered table-striped table-hover table-datatable">
                 <thead>
                     <tr>
@@ -94,13 +80,12 @@
                 </thead>
                 <tbody>
                     <?php 
-
                     $no = 1;
                     if(isset($_GET['kategori'])){
                         $kategori = $_GET['kategori'];
-                        $arsip = mysqli_query($koneksi,"SELECT * FROM arsip,kategori,petugas WHERE arsip_petugas=petugas_id and arsip_kategori=kategori_id and arsip_kategori='$kategori' ORDER BY arsip_id DESC");
+                        $arsip = mysqli_query($koneksi,"SELECT * FROM arsip,kategori,petugas WHERE arsip_petugas=petugas_id and arsip_kategori=kategori_id and arsip_kategori='$kategori' AND kategori_nama='public' ORDER BY arsip_id DESC");
                     }else{
-                        $arsip = mysqli_query($koneksi,"SELECT * FROM arsip,kategori,petugas WHERE arsip_petugas=petugas_id and arsip_kategori=kategori_id ORDER BY arsip_id DESC");
+                        $arsip = mysqli_query($koneksi,"SELECT * FROM arsip,kategori,petugas WHERE arsip_petugas=petugas_id and arsip_kategori=kategori_id AND kategori_nama='public' ORDER BY arsip_id DESC");
                     }
                     while($p = mysqli_fetch_array($arsip)){
                         ?>
@@ -108,18 +93,15 @@
                             <td><?php echo $no++; ?></td>
                             <td><?php echo date('H:i:s  d-m-Y',strtotime($p['arsip_waktu_upload'])) ?></td>
                             <td>
-
                                 <b>KODE</b> : <?php echo $p['arsip_kode'] ?><br>
                                 <b>Nama</b> : <?php echo $p['arsip_nama'] ?><br>
                                 <b>Jenis</b> : <?php echo $p['arsip_jenis'] ?><br>
-
                             </td>
                             <td><?php echo $p['kategori_nama'] ?></td>
                             <td><?php echo $p['petugas_nama'] ?></td>
                             <td><?php echo $p['arsip_keterangan'] ?></td>
                             <td class="text-center">
                                 <div class="btn-group">
-                                    <!-- <a target="_blank" class="btn btn-default" href="../arsip/<?php echo $p['arsip_file']; ?>"><i class="fa fa-download"></i></a> -->
                                     <a target="_blank" class="btn btn-default" href="arsip_download.php?id=<?php echo $p['arsip_id']; ?>"><i class="fa fa-download"></i></a>
                                     <a target="_blank" href="arsip_preview.php?id=<?php echo $p['arsip_id']; ?>" class="btn btn-default"><i class="fa fa-search"></i> Preview</a>
                                 </div>
@@ -130,12 +112,8 @@
                     ?>
                 </tbody>
             </table>
-
-
         </div>
-
     </div>
 </div>
-
 
 <?php include 'footer.php'; ?>
