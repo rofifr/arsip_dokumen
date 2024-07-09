@@ -139,22 +139,6 @@
                                             <ul class="nav navbar-nav mai-top-nav">
                                                 <li class="nav-item header-menu"><a href="index.php" class="nav-link">Home</a></li>
                                                 <li class="nav-item header-menu"><a href="arsip.php" class="nav-link">Semua Arsip</a></li>
-                                                <li class="nav-item header-menu dropdown res-dis-nn">
-                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">Kategori <span class="angle-down-topmenu"><i class="fa fa-angle-down"></i></span></a>
-                                                    <div role="menu" class="dropdown-menu animated zoomIn">
-
-                                                     <?php 
-                                                     $no = 1;
-                                                     $kategori = mysqli_query($koneksi,"SELECT * FROM kategori");
-                                                     while($p = mysqli_fetch_array($kategori)){
-                                                        ?>
-                                                        <a href="arsip.php?kategori=<?php echo $p['kategori_id'] ?>" class="dropdown-item"><?php echo $p['kategori_nama'] ?></a>
-                                                        <?php 
-                                                    }
-                                                    ?>
-
-                                                    </div>
-                                                </li>
                                             </ul>
                                         </div>
                                     </div>
