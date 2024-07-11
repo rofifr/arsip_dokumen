@@ -40,10 +40,7 @@
                 <thead>
                     <tr>
                         <th width="1%">No</th>
-                        <th>Waktu Upload</th>
                         <th>Arsip</th>
-                        <th>Kategori</th>
-                        <th>Petugas</th>
                         <th>Keterangan</th>
                         <th class="text-center" width="20%">OPSI</th>
                     </tr>
@@ -57,14 +54,11 @@
                         ?>
                         <tr>
                             <td><?php echo $no++; ?></td>
-                            <td><?php echo date('H:i:s  d-m-Y',strtotime($p['arsip_waktu_upload'])) ?></td>
                             <td>
                                 <b>KODE</b> : <?php echo $p['arsip_kode'] ?><br>
                                 <b>Nama</b> : <?php echo $p['arsip_nama'] ?><br>
                                 <b>Jenis</b> : <?php echo $p['arsip_jenis'] ?><br>
                             </td>
-                            <td><?php echo $p['kategori_nama'] ?></td>
-                            <td><?php echo $p['petugas_nama'] ?></td>
                             <td><?php echo $p['arsip_keterangan'] ?></td>
                             <td class="text-center">
                                 <div class="btn-group">
