@@ -59,7 +59,7 @@ box-shadow: 0px 7px 23px -21px rgba(0,0,0,0.56);
                                     <i class="fa fa-level-up" aria-hidden="true"></i> 
                                     <span class="counter text-info">
                                         <?php 
-                                        $jumlah_arsip = mysqli_query($koneksi,"select * from arsip");
+                                        $jumlah_arsip = mysqli_query($koneksi, "SELECT * FROM arsip INNER JOIN kategori ON arsip.arsip_kategori = kategori.kategori_id WHERE kategori.kategori_nama = 'public'");
                                         ?>
                                         <span class="counter"><?php echo mysqli_num_rows($jumlah_arsip); ?></span>
                                     </span>
