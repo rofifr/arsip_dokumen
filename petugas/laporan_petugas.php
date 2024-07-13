@@ -2,7 +2,6 @@
 include 'header.php';
 include '../koneksi.php';
 
-
 // Periksa apakah petugas sudah login
 if (!isset($_SESSION['id'])) {
     header("Location: login.php");
@@ -57,7 +56,10 @@ $petugas_id = $_SESSION['id'];
         <br>
 
             <div class="pull-right">
-                <a href="export_laporan_petugas.php" class="btn btn-primary"><i class="fa fa-print" ></i> Cetak Laporan</a>
+                <form method="post" action="export_laporan_petugas.php">
+                    <input type="hidden" name="filter" value="<?php echo isset($_POST['filter']) ? $_POST['filter'] : 'all'; ?>">
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-print"></i> Cetak Laporan</button>
+                </form>
             </div>
             
             <br>
@@ -74,7 +76,6 @@ $petugas_id = $_SESSION['id'];
                 </thead>
                 <tbody>
                 <?php
-
                     $filter = isset($_POST['filter']) ? $_POST['filter'] : 'all';
 
                     $whereClause = "WHERE laporan.laporan_petugas = $petugas_id ";
