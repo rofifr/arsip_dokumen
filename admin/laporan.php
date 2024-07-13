@@ -31,20 +31,20 @@
             <h3 class="panel-title">Laporan Unggah Arsip</h3>
         </div>
         <div class="panel-body">
-        <form method="post" action="">
+        <form method="get" action="">
             <label for="filter">Filter berdasarkan:</label>
             <select name="filter" id="filter">
-                <option value="all" <?php if(isset($_POST['filter']) && $_POST['filter'] == 'all') echo 'selected'; ?>>All Time</option>
-                <option value="7" <?php if(isset($_POST['filter']) && $_POST['filter'] == '7') echo 'selected'; ?>>7 Hari</option>
-                <option value="30" <?php if(isset($_POST['filter']) && $_POST['filter'] == '30') echo 'selected'; ?>>30 Hari</option>
-                <option value="365" <?php if(isset($_POST['filter']) && $_POST['filter'] == '365') echo 'selected'; ?>>365 Hari</option>
+                <option value="all" <?php if(isset($_GET['filter']) && $_GET['filter'] == 'all') echo 'selected'; ?>>All Time</option>
+                <option value="7" <?php if(isset($_GET['filter']) && $_GET['filter'] == '7') echo 'selected'; ?>>7 Hari</option>
+                <option value="30" <?php if(isset($_GET['filter']) && $_GET['filter'] == '30') echo 'selected'; ?>>30 Hari</option>
+                <option value="365" <?php if(isset($_GET['filter']) && $_GET['filter'] == '365') echo 'selected'; ?>>365 Hari</option>
             </select>
             <button type="submit">Terapkan</button>
         </form>
         <br>
 
             <div class="pull-right">
-                <a href="export_laporan.php" class="btn btn-primary"><i class="fa fa-print" ></i> Cetak Laporan</a>
+                <a href="export_laporan.php?filter=<?php echo isset($_GET['filter']) ? $_GET['filter'] : 'all'; ?>" class="btn btn-primary"><i class="fa fa-print" ></i> Cetak Laporan</a>
             </div>
             
             <br>
@@ -63,7 +63,7 @@
                 <?php
                     include '../koneksi.php';
 
-                    $filter = isset($_POST['filter']) ? $_POST['filter'] : 'all';
+                    $filter = isset($_GET['filter']) ? $_GET['filter'] : 'all';
 
                     $whereClause = "";
                     switch ($filter) {

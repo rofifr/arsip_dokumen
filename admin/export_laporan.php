@@ -18,7 +18,7 @@ $sheet->setCellValue('C1', 'Petugas');
 $sheet->setCellValue('D1', 'Nama File');
 
 // Ambil data dari database
-$filter = isset($_POST['filter']) ? $_POST['filter'] : 'all';
+$filter = isset($_GET['filter']) ? $_GET['filter'] : 'all';
 
 $whereClause = "";
 switch ($filter) {
