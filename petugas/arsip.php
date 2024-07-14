@@ -46,7 +46,7 @@
                 if(isset($_GET['alert'])){
                     if($_GET['alert'] == "gagal"){
                         ?>
-                        <div class="alert alert-danger">File arsip gagal diupload. krena demi keamanan file .php tidak diperbolehkan.</div>
+                        <div class="alert alert-danger">File arsip gagal diupload. karena demi keamanan file .php tidak diperbolehkan.</div>
                         <?php
                     }else{
                         ?>
