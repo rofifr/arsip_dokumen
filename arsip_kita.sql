@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 03, 2024 at 06:50 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- Host: 127.0.0.1:3306
+-- Generation Time: Jul 16, 2024 at 02:43 PM
+-- Server version: 10.11.8-MariaDB-cll-lve
+-- PHP Version: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `arsip_kita`
+-- Database: `u619444614_arsip_kita`
 --
 
 -- --------------------------------------------------------
@@ -33,7 +33,7 @@ CREATE TABLE `admin` (
   `admin_username` varchar(255) NOT NULL,
   `admin_password` varchar(255) NOT NULL,
   `admin_foto` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
 -- Dumping data for table `admin`
@@ -58,7 +58,7 @@ CREATE TABLE `arsip` (
   `arsip_kategori` int(11) NOT NULL,
   `arsip_keterangan` text NOT NULL,
   `arsip_file` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
 -- Dumping data for table `arsip`
@@ -87,7 +87,11 @@ INSERT INTO `arsip` (`arsip_id`, `arsip_waktu_upload`, `arsip_petugas`, `arsip_k
 (42, '2024-07-02 10:29:33', 7, 'SIP-012', 'Bantuan Sosial', 'pdf', 1, 'daw', '854802989_Get_Started_With_Smallpdf.pdf'),
 (43, '2024-07-02 11:09:27', 7, 'SK-002', 'Surat Keputusan Lurah', 'pdf', 3, 'dadadadad', '1476091736_document (1).pdf'),
 (44, '2024-07-02 11:09:58', 7, 'SIP-013', 'Pelaksanaan acara 17 Agustus', 'pdf', 4, 'Lapangan desa Cintaraja', '648203996_400980515_Get_Started_With_Smallpdf.pdf'),
-(45, '2024-07-02 14:34:17', 4, 'SKP-005', 'SKP Juni', 'pdf', 7, 'kakajnas', '21577541_400980515_Get_Started_With_Smallpdf.pdf');
+(45, '2024-07-02 14:34:17', 4, 'SKP-005', 'SKP Juni', 'pdf', 7, 'kakajnas', '21577541_400980515_Get_Started_With_Smallpdf.pdf'),
+(46, '2024-07-05 10:46:36', 4, 'SK-0012', 'Surat Keputusan Kepala Desa', 'pdf', 1, 'Surat keterangan Kepala Desa', '2119741439_1663146146Proposal Dina Islamia.pdf'),
+(47, '2024-07-09 08:19:38', 4, 'BS-009', 'Template Surat Izin', 'pdf', 12, 'Template Surat Izin yang bisa diunduh warga', '1558910490_Get_Started_With_Smallpdf.pdf'),
+(48, '2024-07-11 16:52:44', 6, 'SK-0013', 'Arsip Surat Keputusan (SK) Kepala Desa', 'pdf', 12, 'Arsip yang berisi salinan keputusan-keputusan yang dibuat oleh kepala desa', '1859604354_Contoh_Arsip_SK_Kepala_Desa.pdf'),
+(49, '2024-07-13 22:47:11', 7, 'SK-005', 'Surat Keputusan Kuwu', 'pdf', 3, 'Surat Keputusan Rapat 5 Juli 2024', '1738875533_Get_Started_With_Smallpdf.pdf');
 
 -- --------------------------------------------------------
 
@@ -99,7 +103,7 @@ CREATE TABLE `kategori` (
   `kategori_id` int(11) NOT NULL,
   `kategori_nama` varchar(255) NOT NULL,
   `kategori_keterangan` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
 -- Dumping data for table `kategori`
@@ -112,8 +116,9 @@ INSERT INTO `kategori` (`kategori_id`, `kategori_nama`, `kategori_keterangan`) V
 (5, 'Surat Perintah Kerja Proyek jalan', 'Contoh format surat perintah untuk pekerjaan proyek jalan'),
 (6, 'Surat Perintah Kerja Proyek Jembatan', 'Contoh format untuk surat perintah kerja proyek jembatan'),
 (7, 'Surat Kesehatan Pegawai', 'Surat kesehatan untuk pegawai'),
-(8, 'Surat Lampiran Skripsi', 'Surat contoh lampiran untuk skripsi'),
-(10, 'Curiculum Vitae', 'Contoh format surat curiculum vitae untuk kenaikan jabatan');
+(10, 'Curiculum Vitae', 'Contoh format surat curiculum vitae untuk kenaikan jabatan'),
+(11, 'Surat Permohonan', 'Permohonan resmi kepada pihak desa'),
+(12, 'Public', 'Dokumen arsip yang boleh dilihat oleh publik');
 
 -- --------------------------------------------------------
 
@@ -136,7 +141,11 @@ INSERT INTO `laporan` (`laporan_id`, `laporan_waktu`, `laporan_petugas`, `lapora
 (7, '2024-07-02 10:29:33', 7, 'Bantuan Sosial'),
 (8, '2024-07-02 11:09:27', 7, 'Surat Keputusan Lurah'),
 (9, '2024-07-02 11:09:58', 7, 'Pelaksanaan acara 17 Agustus'),
-(10, '2024-07-02 14:34:17', 4, 'SKP Juni');
+(10, '2024-07-02 14:34:17', 4, 'SKP Juni'),
+(11, '2024-07-05 10:46:36', 4, 'Surat Keputusan Kepala Desa'),
+(12, '2024-07-09 08:19:38', 4, 'Template Surat Izin'),
+(13, '2024-07-11 16:52:44', 6, 'Arsip Surat Keputusan (SK) Kepala Desa'),
+(14, '2024-07-13 22:47:11', 7, 'Surat Keputusan Kuwu');
 
 -- --------------------------------------------------------
 
@@ -150,7 +159,7 @@ CREATE TABLE `petugas` (
   `petugas_username` varchar(255) NOT NULL,
   `petugas_password` varchar(255) NOT NULL,
   `petugas_foto` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
 -- Dumping data for table `petugas`
@@ -172,7 +181,7 @@ CREATE TABLE `riwayat` (
   `riwayat_waktu` datetime NOT NULL,
   `riwayat_user` int(11) NOT NULL,
   `riwayat_arsip` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
 -- Dumping data for table `riwayat`
@@ -202,7 +211,19 @@ INSERT INTO `riwayat` (`riwayat_id`, `riwayat_waktu`, `riwayat_user`, `riwayat_a
 (21, '2024-06-24 09:51:40', 8, 15),
 (22, '2024-06-24 09:51:48', 8, 12),
 (23, '2024-06-24 09:51:56', 8, 9),
-(24, '2024-07-03 11:08:11', 8, 45);
+(24, '2024-07-03 11:08:11', 8, 45),
+(25, '2024-07-04 11:21:31', 8, 17),
+(26, '2024-07-04 11:21:43', 8, 20),
+(27, '2024-07-11 14:03:43', 1, 47),
+(28, '2024-07-11 14:04:43', 8, 47),
+(29, '2024-07-11 14:05:32', 1, 47),
+(30, '2024-07-11 16:56:14', 8, 48),
+(31, '2024-07-13 22:48:46', 8, 47),
+(32, '2024-07-15 21:04:02', 8, 48),
+(33, '2024-07-15 21:04:04', 8, 47),
+(34, '2024-07-16 21:42:47', 8, 47),
+(35, '2024-07-16 21:42:50', 8, 48),
+(36, '2024-07-16 21:42:52', 8, 48);
 
 -- --------------------------------------------------------
 
@@ -216,7 +237,7 @@ CREATE TABLE `user` (
   `user_username` varchar(100) NOT NULL,
   `user_password` varchar(100) NOT NULL,
   `user_foto` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
 -- Dumping data for table `user`
@@ -295,19 +316,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `arsip`
 --
 ALTER TABLE `arsip`
-  MODIFY `arsip_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `arsip_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `kategori_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `kategori_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `laporan`
 --
 ALTER TABLE `laporan`
-  MODIFY `laporan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `laporan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `petugas`
@@ -319,7 +340,7 @@ ALTER TABLE `petugas`
 -- AUTO_INCREMENT for table `riwayat`
 --
 ALTER TABLE `riwayat`
-  MODIFY `riwayat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `riwayat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `user`
